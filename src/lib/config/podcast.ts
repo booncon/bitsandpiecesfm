@@ -1,0 +1,20 @@
+export const podcastConfig = {
+  siteUrl: (process.env.SITE_URL ?? 'https://example.com').replace(/\/$/, ''),
+  basePath: (process.env.BASE_PATH ?? '').replace(/\/$/, ''),
+  title: 'bits & pieces',
+  tagline: 'How to get things done & love your work.',
+  description:
+    'A show about why work is not a job, friendships and riding unicorns. Hosted by Lukas Jakob Hafner and Tobias Johannes.',
+  author: 'booncon',
+  language: 'en',
+  coverImage: '/images/bitsandpieces-cover.jpg',
+  email: 'podcast@example.com',
+  copyright: 'booncon',
+  category: 'Technology',
+  explicit: false
+} as const;
+
+export function absoluteUrl(pathname = ''): string {
+  const normalizedPath = pathname.startsWith('/') ? pathname : `/${pathname}`;
+  return `${podcastConfig.siteUrl}${podcastConfig.basePath}${normalizedPath}`;
+}
