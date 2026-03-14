@@ -1,5 +1,5 @@
 <script>
-  import { base } from '$app/paths';
+  import { resolve } from '$app/paths';
 </script>
 
 <svelte:head>
@@ -8,7 +8,7 @@
 
 <div class="page-shell privacy-page">
   <div class="header">
-    <a href="{base}/" class="back-link">← Back to home</a>
+    <a href={resolve('/')} class="back-link">← Back to home</a>
     <h1>Privacy Policy</h1>
   </div>
 

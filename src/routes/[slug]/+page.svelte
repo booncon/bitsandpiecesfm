@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { base } from '$app/paths';
+  import { asset, resolve } from '$app/paths';
   import { absoluteUrl, podcastConfig } from '$lib/config/podcast';
   import { formatBytes, formatDate } from '$lib/utils/format';
   import PodloveSubscribeButton from '$lib/components/PodloveSubscribeButton.svelte';
@@ -16,7 +16,7 @@
 
 <div class="page-shell">
   <p class="back-link">
-    <a href={`${base}/`}>Back to home</a>
+    <a href={resolve('/')}>Back to home</a>
   </p>
 
   <article class="episode-shell">
@@ -52,11 +52,11 @@
           title="Apple Podcast Player"
         ></iframe>
       {:else}
-        <audio controls preload="none" src={`${base}${data.episode.audio}`}></audio>
+        <audio controls preload="none" src={asset(data.episode.audio)}></audio>
       {/if}
       <div class="player-links">
         <button class="button podlove-subscribe-button-episode-btn">Subscribe</button>
-        <a class="text-link" href={`${base}${data.episode.audio}`}>Download MP3</a>
+        <a class="text-link" href={asset(data.episode.audio)}>Download MP3</a>
         <PodloveSubscribeButton buttonId="episode-btn" />
       </div>
     </section>
@@ -84,7 +84,7 @@
         <h2>More episodes</h2>
         <div class="related-list">
           {#each data.relatedEpisodes as episode}
-            <a href={`${base}/${episode.slug}/`}>
+            <a href={resolve(`/${episode.slug}/`)}>
               <strong>{episode.title}</strong>
               <span>{formatDate(episode.date)}</span>
             </a>

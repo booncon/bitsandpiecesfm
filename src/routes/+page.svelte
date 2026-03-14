@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { base } from '$app/paths';
+  import { asset, resolve } from '$app/paths';
   import { podcastConfig } from '$lib/config/podcast';
   import { formatBytes, formatDate } from '$lib/utils/format';
   import PodloveSubscribeButton from '$lib/components/PodloveSubscribeButton.svelte';
@@ -10,7 +10,7 @@
 <svelte:head>
   <title>{podcastConfig.title}</title>
   <meta name="description" content={podcastConfig.description} />
-  <link rel="alternate" type="application/rss+xml" title={podcastConfig.title} href={`${base}/rss.xml`} />
+  <link rel="alternate" type="application/rss+xml" title={podcastConfig.title} href={resolve('/rss.xml')} />
 </svelte:head>
 
 <div class="page-shell">
@@ -28,7 +28,7 @@
 
     <div class="cover-card">
       <img
-        src={`${base}${podcastConfig.coverImage}`}
+        src={asset(podcastConfig.coverImage)}
         alt={`${podcastConfig.title} cover artwork`}
         width="720"
         height="720"
@@ -47,7 +47,7 @@
           </div>
         </div>
       
-        <a href={`${base}/${data.latest.slug}/`}><h2>{data.latest.title}</h2></a>
+        <a href={resolve(`/${data.latest.slug}/`)}><h2>{data.latest.title}</h2></a>
         {#if data.latest.subtitle}
           <p class="subtitle">{data.latest.subtitle}</p>
         {/if}
@@ -65,7 +65,7 @@
             title="Apple Podcast Player"
           ></iframe>
         {:else}
-          <audio controls preload="none" src={`${base}${data.latest.audio}`}></audio>
+          <audio controls preload="none" src={asset(data.latest.audio)}></audio>
         {/if}
 
         <div class="feature-actions">
@@ -75,7 +75,7 @@
             {/if}
             <span>{formatBytes(data.latest.audioSize)}</span>
           </div>
-          <a class="text-link" href={`${base}/${data.latest.slug}/`}>Open episode</a>
+          <a class="text-link" href={resolve(`/${data.latest.slug}/`)}>Open episode</a>
         </div>
       </div>
 
@@ -102,7 +102,7 @@
             <p class="episode-date">{formatDate(episode.date)}</p>
           </div>
           <h3>
-            <a href={`${base}/${episode.slug}/`}>{episode.title}</a>
+            <a href={resolve(`/${episode.slug}/`)}>{episode.title}</a>
           </h3>
           {#if episode.subtitle}
             <p class="subtitle">{episode.subtitle}</p>
@@ -117,7 +117,7 @@
               {/if}
               <span>{formatBytes(episode.audioSize)}</span>
             </div>
-            <a class="text-link" href={`${base}/${episode.slug}/`}>Open episode</a>
+            <a class="text-link" href={resolve(`/${episode.slug}/`)}>Open episode</a>
           </div>
         </article>
       {/each}

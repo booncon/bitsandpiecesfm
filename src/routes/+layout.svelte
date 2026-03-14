@@ -1,6 +1,6 @@
 <script>
   import "../app.css";
-  import { base } from '$app/paths';
+  import { resolve } from '$app/paths';
 </script>
 
 <div class="layout-container">
@@ -12,7 +12,7 @@
     <div class="footer-inner">
       <p>&copy; 2026 booncon oy</p>
       <nav>
-        <a href="{base}/privacy">Privacy Policy</a>
+        <a href={resolve('/privacy')}>Privacy Policy</a>
       </nav>
     </div>
   </footer>
