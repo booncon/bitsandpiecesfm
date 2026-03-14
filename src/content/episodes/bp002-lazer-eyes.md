@@ -7,6 +7,8 @@ duration: "32:11"
 appleId: 1000339620034
 guid: podlove-2015-04-03t16:36:56+00:00-c5025b1ff3a3910
 subtitle: Sports and lazer eye surgeries
+season: 1
+episodeNumber: 2
 tags:
   - aws
   - disc golf
@@ -14,17 +16,34 @@ tags:
   - startups
 ---
 
-## Overview
+### Intro
 
-This episode catches up on the previous months and moves between startup life, sports, and the practical realities of lazer eye surgery.
+[@saftsaak](https://twitter.com/saftsaak) – [@metzelfetz](https://twitter.com/metzelfetz)
 
-## Topics
+### Nordic Startup Environment
 
-- Startup lessons and technical detours
-- Sports, energy, and recovery
-- Health experiments and lazer eye surgery
-- What changed after a busy stretch of work
+[Startup Sauna](http://startupsauna.com) – [#cphftw](http://cphftw.dk) – [Helsinki Gaming Scene](http://techcrunch.com/2013/12/03/rovio-supercell-finland/) – [Catchbox](http://eu.getcatchbox.com) – [LeeLuu](http://www.leeluu.fi)
 
-## Notes
+### AWSome Day Helsinki
 
-The content model is intentionally lightweight: summary, metadata, audio path, and markdown notes. That makes it easy to keep editing episodes with nothing more than a `.md` file.
+[AWS](https://aws.amazon.com) – [Roadshow 2015](https://aws.amazon.com/events/awsome-day-roadshow-mar-2015/) – [Redshift](https://aws.amazon.com/redshift/) – [AWS Summit Stockholm 2015](https://aws.amazon.com/summits/stockholm/faqs/)
+
+### A little bit of sports
+
+[Toughest](http://www.toughest.se/en/events/copenhagen/) – [Disc Golf](https://en.wikipedia.org/wiki/Disc_golf) – [Portable disc golf basket](http://www.innovadiscs.com/targets/skillshot.html)
+
+### Lazer eyes
+
+[PRK](https://en.wikipedia.org/wiki/Photorefractive_keratectomy) – [SMILE](http://www.lasiksurgerynews.com/news/flex.shtml) – [Eye Exam Equipment](http://vision.about.com/od/eyeexaminations/ig/Eye-Exam-Equipment/)
+
+### TV show recommendations
+
+[Gotham](http://www.imdb.com/title/tt3749900/) – [Black Mirror](http://www.imdb.com/title/tt2085059/)
+
+### Rant of the week: Google Chromebox for meetings
+
+[Chromebox for meetings](https://www.google.com/work/chrome/devices/for-meetings/index.html)
+
+### Outro
+
+[booncon.com/podcast](http://booncon.com/podcast) – [@booncon](https://twitter.com/booncon)
