@@ -16,7 +16,7 @@
 
 <div class="page-shell">
   <p class="back-link">
-    <a href={`${base}/`}>Back to archive</a>
+    <a href={`${base}/`}>Back to home</a>
   </p>
 
   <article class="episode-shell">
@@ -55,8 +55,9 @@
         <audio controls preload="none" src={`${base}${data.episode.audio}`}></audio>
       {/if}
       <div class="player-links">
-        <a class="button" href={`${base}${data.episode.audio}`}>Download MP3</a>
-        <PodloveSubscribeButton />
+        <button class="button podlove-subscribe-button-episode-btn">Subscribe</button>
+        <a class="text-link" href={`${base}${data.episode.audio}`}>Download MP3</a>
+        <PodloveSubscribeButton buttonId="episode-btn" />
       </div>
     </section>
 
@@ -172,12 +173,15 @@
     margin-top: 1rem;
   }
 
-  .button {
+  .button, .text-link {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     border-radius: 999px;
     font-weight: 600;
+    border: none;
+    cursor: pointer;
+    font: inherit;
     text-decoration: none;
   }
 
@@ -191,8 +195,6 @@
     background: var(--accent-strong);
     text-decoration: none;
   }
-
-
 
   .prose :global(h2),
   .prose :global(h3) {
