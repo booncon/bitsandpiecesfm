@@ -19,7 +19,7 @@
   const serializedData = JSON.stringify(podcastData);
   
   const setupScript = `<script>window.podcastData = ${serializedData};<\/script>`;
-  const buttonScript = `<script class="podlove-subscribe-button" src="https://cdn.podlove.org/subscribe-button/javascripts/app.js" data-language="en" data-size="auto" data-json-data="podcastData" data-color="#1f7a68" data-format="cover" data-style="filled"><\/script>`;
+  const buttonScript = `<script class="podlove-subscribe-button" src="https://cdn.podlove.org/subscribe-button/javascripts/app.js" data-language="en" data-size="medium" data-json-data="podcastData" data-color="#1f7a68" data-style="filled"><\/script>`;
 </script>
 
 <svelte:head>

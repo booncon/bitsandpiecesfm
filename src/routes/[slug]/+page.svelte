@@ -172,8 +172,7 @@
     margin-top: 1rem;
   }
 
-  .button,
-  .text-link {
+  .button {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -193,9 +192,7 @@
     text-decoration: none;
   }
 
-  .text-link {
-    color: var(--accent-strong);
-  }
+
 
   .prose :global(h2),
   .prose :global(h3) {

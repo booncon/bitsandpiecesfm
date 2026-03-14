@@ -105,6 +105,8 @@
           </h3>
           {#if episode.subtitle}
             <p class="subtitle">{episode.subtitle}</p>
+          {:else}
+            <!-- Empty line to match block structure if needed, but svelte-check is usually fine -->
           {/if}
           <p class="summary">{episode.summary}</p>
           <div class="card-footer">
