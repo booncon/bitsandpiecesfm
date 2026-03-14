@@ -14,6 +14,7 @@ export type Episode = {
   audioSize: number;
   episodeNumber: number;
   appleId?: number;
+  guid?: string;
 };
 
 export type EpisodeFrontmatter = Omit<

@@ -5,6 +5,7 @@ summary: In this special episode we might be victims of residual alcohol and tal
 audio: /media/episodes/bp006-cat-gif-offsprings.mp3
 duration: "33:52"
 appleId: 1000376199363
+guid: podlove-2016-10-03t10:49:47+00:00-a5fdd445ec99795
 subtitle: Awesome party games and victims of residual alcohol
 tags:
   - birthday

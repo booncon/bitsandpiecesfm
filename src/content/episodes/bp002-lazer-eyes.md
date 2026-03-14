@@ -5,6 +5,7 @@ summary: In this episode we randomly rumble through some of the things that happ
 audio: /media/episodes/bp002-lazer-eyes.mp3
 duration: "32:11"
 appleId: 1000339620034
+guid: podlove-2015-04-03t16:36:56+00:00-c5025b1ff3a3910
 subtitle: Sports and lazer eye surgeries
 tags:
   - aws

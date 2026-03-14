@@ -5,6 +5,7 @@ summary: Another special episode where we discuss our experiences and possibilit
 audio: /media/episodes/bp007-hitlers-dirty-surrogates.mp3
 duration: "32:43"
 appleId: 1000376871325
+guid: podlove-2016-10-18t11:26:25+00:00-ada289d1f7c5c07
 subtitle: Experiences and possibilities with VR
 tags:
   - experiences

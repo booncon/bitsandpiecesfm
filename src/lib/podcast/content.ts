@@ -18,7 +18,8 @@ const frontmatterSchema = z.object({
   draft: z.boolean().optional(),
   subtitle: z.string().min(1).optional(),
   tags: z.array(z.string().min(1)).default([]),
-  appleId: z.number().optional()
+  appleId: z.number().optional(),
+  guid: z.string().min(1).optional()
 });
 
 const slugPattern = /^bp\d{3}-[a-z0-9-]+$/;

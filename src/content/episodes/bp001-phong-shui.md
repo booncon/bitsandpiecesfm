@@ -5,6 +5,7 @@ summary: In this first episode we talk about who we are and what we were up to i
 audio: /media/episodes/bp001-phong-shui.mp3
 duration: "07:52"
 appleId: 1000335403717
+guid: podlove-2015-02-17t20:45:00+00:00-44a21be09d742ac
 subtitle: Random topics like feng shui
 tags:
   - feng shui

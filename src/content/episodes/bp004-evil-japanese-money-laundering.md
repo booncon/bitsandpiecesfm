@@ -5,6 +5,7 @@ summary: In this episode we talk about summer activities, money laundering, alph
 audio: /media/episodes/bp004-evil-japanese-money-laundering.mp3
 duration: "47:41"
 appleId: 1000349631337
+guid: podlove-2015-08-13t17:09:03+00:00-36fa5f7efed7127
 subtitle: Summer activities and pizza
 tags:
   - alphabet

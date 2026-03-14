@@ -22,7 +22,9 @@ export function generateRss(episodes: Episode[]): string {
         '<item>',
         `<title>${escapeXml(episode.title)}</title>`,
         `<link>${escapeXml(episodeUrl)}</link>`,
-        `<guid isPermaLink="true">${escapeXml(episodeUrl)}</guid>`,
+        episode.guid
+          ? `<guid isPermaLink="false">${escapeXml(episode.guid)}</guid>`
+          : `<guid isPermaLink="true">${escapeXml(episodeUrl)}</guid>`,
         `<pubDate>${new Date(episode.date).toUTCString()}</pubDate>`,
         `<description>${escapeXml(episode.summary)}</description>`,
         `<itunes:summary>${escapeXml(episode.summary)}</itunes:summary>`,

@@ -5,6 +5,7 @@ summary: This time we cry about the EU crisis, budgeting of Texas trips, escapin
 audio: /media/episodes/bp005-drawing-a-picture.mp3
 duration: "45:51"
 appleId: 1000363452633
+guid: podlove-2016-02-18t20:48:59+00:00-c4d1c7f84d11159
 subtitle: Crying about the EU crisis
 tags:
   - brexit
