@@ -19,7 +19,9 @@ const frontmatterSchema = z.object({
   subtitle: z.string().min(1).optional(),
   tags: z.array(z.string().min(1)).default([]),
   appleId: z.number().optional(),
-  guid: z.string().min(1).optional()
+  guid: z.string().min(1).optional(),
+  season: z.number().optional(),
+  episodeType: z.enum(['full', 'trailer', 'bonus']).optional()
 });
 
 const slugPattern = /^bp\d{3}-[a-z0-9-]+$/;

@@ -13,7 +13,9 @@ export const podcastConfig = {
   coverImage: "/images/bitsandpieces-cover.jpg",
   email: "hello@booncon.com",
   copyright: "booncon",
-  category: "Technology",
+  categories: ["Society & Culture", "Business", "Education"] as readonly string[],
+  itunesType: "episodic",
+  googlePlayCategory: "Business",
   explicit: false,
 } as const;
 

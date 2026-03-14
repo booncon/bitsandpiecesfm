@@ -15,6 +15,8 @@ export type Episode = {
   episodeNumber: number;
   appleId?: number;
   guid?: string;
+  season?: number;
+  episodeType?: string;
 };
 
 export type EpisodeFrontmatter = Omit<
