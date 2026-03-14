@@ -117,7 +117,7 @@
   .tags-card,
   .related-card {
     border: 1px solid var(--border);
-    border-radius: 1.8rem;
+    border-radius: 1.2rem;
     background: var(--surface-strong);
     box-shadow: var(--shadow);
     padding: 1.4rem;

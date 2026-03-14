@@ -4,7 +4,6 @@
   import { formatBytes, formatDate } from '$lib/utils/format';
   import PodloveSubscribeButton from '$lib/components/PodloveSubscribeButton.svelte';
   import type { PageData } from './$types';
-
   export let data: PageData;
 </script>
 
@@ -13,10 +12,6 @@
   <meta name="description" content={podcastConfig.description} />
   <link rel="alternate" type="application/rss+xml" title={podcastConfig.title} href={`${base}/rss.xml`} />
 </svelte:head>
-
-<script lang="ts" context="module">
-  export {};
-</script>
 
 <div class="page-shell">
   <section class="hero">
@@ -49,14 +44,10 @@
           <p class="episode-number">Episode {data.latest.episodeNumber}</p>
           <div class="feature-meta">
             <span>{formatDate(data.latest.date)}</span>
-            {#if data.latest.duration}
-              <span>{data.latest.duration}</span>
-            {/if}
-            <span>{formatBytes(data.latest.audioSize)}</span>
           </div>
         </div>
       
-        <h2>{data.latest.title}</h2>
+        <a href={`${base}/${data.latest.slug}/`}><h2>{data.latest.title}</h2></a>
         {#if data.latest.subtitle}
           <p class="subtitle">{data.latest.subtitle}</p>
         {/if}
@@ -78,8 +69,13 @@
         {/if}
 
         <div class="feature-actions">
-          <a class="text-link" href={`${base}${data.latest.audio}`}>Download MP3</a>
-          <a class="button" href={`${base}/${data.latest.slug}/`}>Open episode</a>
+          <div class="feature-meta">
+            {#if data.latest.duration}
+              <span>{data.latest.duration}</span>
+            {/if}
+            <span>{formatBytes(data.latest.audioSize)}</span>
+          </div>
+          <a class="text-link" href={`${base}/${data.latest.slug}/`}>Open episode</a>
         </div>
       </div>
 
@@ -121,7 +117,7 @@
               {/if}
               <span>{formatBytes(episode.audioSize)}</span>
             </div>
-            <a class="text-link" href={`${base}/${episode.slug}/`}>Read notes</a>
+            <a class="text-link" href={`${base}/${episode.slug}/`}>Open episode</a>
           </div>
         </article>
       {/each}
@@ -133,13 +129,39 @@
   .page-shell {
     width: min(1100px, calc(100vw - 2rem));
     margin: 0 auto;
-    padding: 2rem 0 4rem;
+    padding: 2rem 0 1rem;
+  }
+
+  @media (max-width: 819px) {
+    :global(body) {
+      overflow-x: hidden;
+    }
+    .page-shell {
+      padding-top: 0;
+      margin-top: 0;
+    }
   }
 
   .hero {
-    display: grid;
+    display: flex;
+    flex-direction: column-reverse;
     gap: 1.5rem;
     align-items: center;
+  }
+
+  @media (max-width: 819px) {
+    .hero {
+      margin-top: 0;
+      padding-top: 0;
+    }
+  }
+
+  @media (min-width: 820px) {
+    .hero {
+      display: grid;
+      grid-template-columns: 1.4fr minmax(280px, 0.8fr);
+      align-items: stretch;
+    }
   }
 
   .hero-copy,
@@ -154,7 +176,7 @@
 
   .hero-copy {
     padding: clamp(1.5rem, 3vw, 3rem);
-    border-radius: 2rem;
+    border-radius: 1.2rem;
   }
 
   .hero-copy h1 {
@@ -240,9 +262,43 @@
   }
 
   .cover-card {
-    border-radius: 2rem;
+    border-radius: 1.2rem;
     overflow: hidden;
     aspect-ratio: 1;
+  }
+
+  @media (min-width: 820px) {
+    .cover-card {
+      aspect-ratio: auto;
+      height: 100%;
+    }
+  }
+
+  @media (max-width: 819px) {
+    .cover-card {
+      width: calc(100% + 2rem);
+      margin-left: -1rem;
+      margin-right: -1rem;
+      margin-top: 0;
+      padding: 0;
+      border-radius: 0;
+      border: none;
+      box-shadow: none;
+      aspect-ratio: auto;
+    }
+  }
+
+  .cover-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  @media (max-width: 819px) {
+    .cover-card img {
+      height: auto;
+    }
   }
 
   .feature,
@@ -253,7 +309,7 @@
   .feature-card {
     margin-top: 0.75rem;
     padding: 1.5rem;
-    border-radius: 2rem;
+    border-radius: 1.2rem;
     gap: 1.25rem;
   }
 
@@ -291,8 +347,10 @@
   }
 
   .episode-card {
-    border-radius: 1.5rem;
+    border-radius: 1rem;
     padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
   }
 
   .episode-card h3 {
@@ -306,7 +364,11 @@
   }
 
   .card-footer {
-    margin-top: 1rem;
+    margin-top: auto;
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    align-items: center;
     justify-content: space-between;
   }
 
