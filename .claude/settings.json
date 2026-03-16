@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install:*)",
+      "Bash(npx svelte-check:*)",
+      "Bash(npm info:*)",
+      "Bash(npm run:*)"
+    ]
+  }
+}

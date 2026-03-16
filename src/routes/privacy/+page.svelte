@@ -27,10 +27,18 @@
     <h2>2. Personal Data & Cookies</h2>
     <p>Our website uses cookies to provide user-friendly services. If you prefer, you can disable cookies in your browser settings. We collect general data and information (such as browser type, operating system, and IP address) in server log files to ensure our website functions correctly and securely.</p>
 
-    <h2>3. Data Storage & Erasure</h2>
+    <h2>3. Analytics (Plausible)</h2>
+    <p>
+      We use Plausible Analytics to understand overall website usage and improve our content. Plausible is a privacy-friendly
+      analytics service that does not use cookies and does not create personal user profiles. Aggregated metrics may include
+      information such as visited pages, referrer, browser type, device type, and country. For details, see
+      <a href="https://plausible.io/data-policy" target="_blank" rel="noreferrer">Plausible's data policy</a>.
+    </p>
+
+    <h2>4. Data Storage & Erasure</h2>
     <p>We only store personal data for the period necessary to achieve the purpose of storage, or as required by law. Once the purpose is fulfilled or the storage period expires, personal data is routinely erased or blocked.</p>
 
-    <h2>4. Your Rights</h2>
+    <h2>5. Your Rights</h2>
     <p>You have the right to request confirmation as to whether your personal data is being processed, and to access the personal data we hold about you. You may also have rights to rectification, erasure, or restriction of processing in accordance with the GDPR.</p>
   </div>
 </div>

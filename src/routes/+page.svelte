@@ -1,8 +1,10 @@
 <script lang="ts">
   import { asset, resolve } from '$app/paths';
   import { podcastConfig } from '$lib/config/podcast';
+  import coverImage from '$lib/assets/bitsandpieces-cover.jpg?enhanced';
   import { formatBytes, formatDate } from '$lib/utils/format';
   import PodloveSubscribeButton from '$lib/components/PodloveSubscribeButton.svelte';
+  import AudioPlayer from '$lib/components/AudioPlayer.svelte';
   import type { PageData } from './$types';
   export let data: PageData;
 </script>
@@ -27,11 +29,14 @@
     </div>
 
     <div class="cover-card">
-      <img
-        src={asset(podcastConfig.coverImage)}
+      <enhanced:img
+        class="cover-img"
+        src={coverImage}
         alt={`${podcastConfig.title} cover artwork`}
         width="720"
         height="720"
+        fetchpriority="high"
+        loading="eager"
       />
     </div>
   </section>
@@ -53,20 +58,11 @@
         {/if}
         <p class="summary">{data.latest.summary}</p>
         
-        {#if data.latest.appleId}
-          <iframe
-            src={`https://embed.podcasts.apple.com/us/podcast/bits-pieces/id967039989?i=${data.latest.appleId}`}
-            height="175"
-            width="100%"
-            frameborder="0"
-            sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation-by-user-activation"
-            allow="autoplay *; encrypted-media *;"
-            style="width: 100%; overflow: hidden; border-radius: 10px; background-color: transparent;"
-            title="Apple Podcast Player"
-          ></iframe>
-        {:else}
-          <audio controls preload="none" src={asset(data.latest.audio)}></audio>
-        {/if}
+        <AudioPlayer
+          src={asset(data.latest.audio)}
+          cover={asset(podcastConfig.coverImage)}
+          title={data.latest.title}
+        />
 
         <div class="feature-actions">
           <div class="feature-meta">
@@ -162,6 +158,10 @@
       grid-template-columns: 1.4fr minmax(280px, 0.8fr);
       align-items: stretch;
     }
+
+    .cover-card {
+      min-height: 0;
+    }
   }
 
   .hero-copy,
@@ -172,6 +172,7 @@
     background: var(--surface);
     backdrop-filter: blur(20px);
     box-shadow: var(--shadow);
+    box-sizing: border-box;
   }
 
   .hero-copy {
@@ -265,6 +266,7 @@
     border-radius: 1.2rem;
     overflow: hidden;
     aspect-ratio: 1;
+    background-color: var(--brand);
   }
 
   @media (min-width: 820px) {
@@ -288,7 +290,7 @@
     }
   }
 
-  .cover-card img {
+  .cover-card :global(.cover-img) {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -296,7 +298,7 @@
   }
 
   @media (max-width: 819px) {
-    .cover-card img {
+    .cover-card :global(.cover-img) {
       height: auto;
     }
   }

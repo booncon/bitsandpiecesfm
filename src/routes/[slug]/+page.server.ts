@@ -4,6 +4,10 @@ import { getEpisode, getEpisodes } from '$lib/server/episodes';
 
 import type { PageServerLoad } from './$types';
 
+export async function entries() {
+  return getEpisodes().map((e) => ({ slug: e.slug }));
+}
+
 export const load: PageServerLoad = ({ params }) => {
   const episode = getEpisode(params.slug);
 

@@ -27,7 +27,7 @@
     ? `data-buttonid="${buttonId}" data-hide="true" ` 
     : '';
 
-  const buttonScript = `<script class="podlove-subscribe-button" src="https://cdn.podlove.org/subscribe-button/javascripts/app.js" data-language="en" data-size="medium" data-json-data="podcastData" data-color="#1f7a68" data-style="filled" ${buttonAttributes}><\/script>`;
+  const buttonScript = `<script async class="podlove-subscribe-button" src="https://cdn.podlove.org/subscribe-button/javascripts/app.js" data-language="en" data-size="medium" data-json-data="podcastData" data-color="#1f7a68" data-style="filled" ${buttonAttributes}><\/script>`;
 </script>
 
 <svelte:head>

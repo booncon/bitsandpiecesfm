@@ -1,9 +1,12 @@
+const nodeEnv = (key: string): string | undefined =>
+  typeof process !== "undefined" ? process.env[key] : undefined;
+
 export const podcastConfig = {
-  siteUrl: (process.env.SITE_URL || "https://bitsandpieces.fm").replace(
+  siteUrl: (nodeEnv("SITE_URL") || "https://bitsandpieces.fm").replace(
     /\/$/,
     "",
   ),
-  basePath: (process.env.BASE_PATH || "").replace(/\/$/, ""),
+  basePath: (nodeEnv("BASE_PATH") || "").replace(/\/$/, ""),
   title: "bits & pieces",
   tagline: "How to get things done & love your work.",
   description:
@@ -13,7 +16,11 @@ export const podcastConfig = {
   coverImage: "/images/bitsandpieces-cover.jpg",
   email: "hello@booncon.com",
   copyright: "booncon",
-  categories: ["Society & Culture", "Business", "Education"] as readonly string[],
+  categories: [
+    "Society & Culture",
+    "Business",
+    "Education",
+  ] as readonly string[],
   itunesType: "episodic",
   googlePlayCategory: "Business",
   explicit: false,

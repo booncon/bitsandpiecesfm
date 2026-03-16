@@ -3,6 +3,7 @@
   import { absoluteUrl, podcastConfig } from '$lib/config/podcast';
   import { formatBytes, formatDate } from '$lib/utils/format';
   import PodloveSubscribeButton from '$lib/components/PodloveSubscribeButton.svelte';
+  import AudioPlayer from '$lib/components/AudioPlayer.svelte';
   import type { PageData } from './$types';
 
   export let data: PageData;
@@ -40,20 +41,11 @@
 
     <section class="player-card">
       <p class="summary">{data.episode.summary}</p>
-      {#if data.episode.appleId}
-        <iframe
-          src={`https://embed.podcasts.apple.com/us/podcast/bits-pieces/id967039989?i=${data.episode.appleId}`}
-          height="175"
-          width="100%"
-          frameborder="0"
-          sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation-by-user-activation"
-          allow="autoplay *; encrypted-media *;"
-          style="width: 100%; overflow: hidden; border-radius: 10px; background-color: transparent;"
-          title="Apple Podcast Player"
-        ></iframe>
-      {:else}
-        <audio controls preload="none" src={asset(data.episode.audio)}></audio>
-      {/if}
+      <AudioPlayer
+        src={asset(data.episode.audio)}
+        cover={asset(data.episode.image ?? podcastConfig.coverImage)}
+        title={data.episode.title}
+      />
       <div class="player-links">
         <button class="button podlove-subscribe-button-episode-btn">Subscribe</button>
         <a class="text-link" href={asset(data.episode.audio)}>Download MP3</a>
